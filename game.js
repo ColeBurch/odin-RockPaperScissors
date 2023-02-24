@@ -23,7 +23,7 @@ function getPlayerChoice() {
     }
 }
 
-function game() {
+function round() {
     let playerChoice = getPlayerChoice()
     let computerChoice = getComputerChoice()
     console.log("The computer chose " + computerChoice)
@@ -44,4 +44,4 @@ function game() {
     }
 }
 
-console.log(game())
+console.log(round())
