@@ -23,4 +23,25 @@ function getPlayerChoice() {
     }
 }
 
-console.log(getPlayerChoice())
+function game() {
+    let playerChoice = getPlayerChoice()
+    let computerChoice = getComputerChoice()
+    console.log("The computer chose " + computerChoice)
+    if (playerChoice == "Rock" && computerChoice == "Scissors") {
+        return "You win!"
+    } else if (playerChoice == "Rock" && computerChoice == "Paper") {
+        return "Sorry, you lost."
+    } else if (playerChoice == "Paper" && computerChoice == "Scissors") {
+        return "Sorry, you lost."
+    } else if (playerChoice == "Paper" && computerChoice == "Rock") {
+        return "You win!"
+    } else if (playerChoice == "Scissors" && computerChoice == "Rock") {
+        return "Sorry, you lost."
+    } else if (playerChoice == "Scissors" && computerChoice == "Paper") {
+        return "You win!"
+    } else {
+        return "It's a tie!"
+    }
+}
+
+console.log(game())
