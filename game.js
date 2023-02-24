@@ -44,4 +44,25 @@ function round() {
     }
 }
 
-console.log(round())
+function game() {
+    let playerScore = 0
+    let computerScore = 0
+    for (let i = 0; i < 5; i++) {
+        let results = round()
+        console.log(results)
+        if (results == "You win!") {
+            playerScore++
+        } else if (results == "Sorry, you lost.") {
+            computerScore++
+        } 
+    }
+    if (playerScore == computerScore) {
+        return "The game ended in a tie."
+    } else if (playerScore > computerScore) {
+        return "You won the game!"
+    } else if (playerScore < computerScore) {
+        return "Sorry, you lost the game."
+    }
+}
+
+console.log(game())
