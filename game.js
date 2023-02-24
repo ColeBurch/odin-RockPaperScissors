@@ -9,8 +9,18 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
-console.log(getComputerChoice())
-console.log(getComputerChoice())
-console.log(getComputerChoice())
-console.log(getComputerChoice())
+function getPlayerChoice() {
+    let playerChoice = prompt("What will you play?")
+    let formattedPlayerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase()
+    if (formattedPlayerChoice == "Rock") {
+        return "Rock"
+    } else if (formattedPlayerChoice == "Paper") {
+        return "Paper"
+    } else if (formattedPlayerChoice == "Scissors") {
+        return "Scissors"
+    } else {
+        return "Invalid Input"
+    }
+}
+
+console.log(getPlayerChoice())
