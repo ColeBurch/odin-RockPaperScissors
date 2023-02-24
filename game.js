@@ -10,13 +10,13 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let playerChoice = prompt("What will you play?")
-    let formattedPlayerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase()
-    if (formattedPlayerChoice == "Rock") {
+    let playerInput = prompt("What will you play?")
+    let formattedPlayerInput = playerInput.toLowerCase()
+    if ( formattedPlayerInput == "rock") {
         return "Rock"
-    } else if (formattedPlayerChoice == "Paper") {
+    } else if (formattedPlayerInput == "paper") {
         return "Paper"
-    } else if (formattedPlayerChoice == "Scissors") {
+    } else if (formattedPlayerInput == "scissors") {
         return "Scissors"
     } else {
         return "Invalid Input"
