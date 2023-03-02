@@ -9,22 +9,8 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    let playerInput = prompt("What will you play?")
-    let formattedPlayerInput = playerInput.toLowerCase()
-    if ( formattedPlayerInput == "rock") {
-        return "Rock"
-    } else if (formattedPlayerInput == "paper") {
-        return "Paper"
-    } else if (formattedPlayerInput == "scissors") {
-        return "Scissors"
-    } else {
-        return "Invalid Input"
-    }
-}
-
-function round() {
-    let playerChoice = getPlayerChoice()
+function round(playerClick) {
+    let playerChoice = playerClick
     let computerChoice = getComputerChoice()
     console.log("The computer chose " + computerChoice)
     if (playerChoice == "Rock" && computerChoice == "Scissors") {
@@ -69,6 +55,7 @@ const buttons = document.querySelectorAll('button')
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(button.id);
+        let results = round(button.id);
+        console.log(results)
     })
 })
