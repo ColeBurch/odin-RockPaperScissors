@@ -12,21 +12,21 @@ function getComputerChoice() {
 function round(playerClick) {
     let playerChoice = playerClick
     let computerChoice = getComputerChoice()
-    console.log("The computer chose " + computerChoice)
+    let computerText = "The computer chose " + computerChoice + ","
     if (playerChoice == "Rock" && computerChoice == "Scissors") {
-        return "You win!"
+        return computerText + " You win!"
     } else if (playerChoice == "Rock" && computerChoice == "Paper") {
-        return "Sorry, you lost."
+        return computerText + " you lost."
     } else if (playerChoice == "Paper" && computerChoice == "Scissors") {
-        return "Sorry, you lost."
+        return computerText + " you lost."
     } else if (playerChoice == "Paper" && computerChoice == "Rock") {
-        return "You win!"
+        return computerText + " You win!"
     } else if (playerChoice == "Scissors" && computerChoice == "Rock") {
-        return "Sorry, you lost."
+        return computerText + " you lost."
     } else if (playerChoice == "Scissors" && computerChoice == "Paper") {
-        return "You win!"
+        return computerText + " You win!"
     } else {
-        return "It's a tie!"
+        return computerText + " It's a tie!"
     }
 }
 
@@ -52,10 +52,11 @@ function game() {
 }
 
 const buttons = document.querySelectorAll('button')
+const content = document.querySelector(".results")
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let results = round(button.id);
-        console.log(results)
+        content.textContent = results
     })
 })
