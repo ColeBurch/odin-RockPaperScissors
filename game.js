@@ -64,5 +64,3 @@ function game() {
         return "Sorry, you lost the game."
     }
 }
-
-console.log(game())
