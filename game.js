@@ -30,33 +30,47 @@ function round(playerClick) {
     }
 }
 
-function game() {
-    let playerScore = 0
-    let computerScore = 0
-    for (let i = 0; i < 5; i++) {
-        let results = round()
-        console.log(results)
-        if (results == "You win!") {
-            playerScore++
-        } else if (results == "Sorry, you lost.") {
-            computerScore++
-        } 
+function game(results) {
+    if (results.endsWith("You win!")) {
+        playerScore++
+    } if (results.endsWith("you lost.")) {
+        computerScore++
+    } 
+    counter++
+    if (counter == 5) {
+        if (playerScore == computerScore) {
+            playerScore = 0
+            computerScore = 0
+            counter = 0
+            return "The game ended in a tie."
+        } else if (playerScore > computerScore) {
+            playerScore = 0
+            computerScore = 0
+            counter = 0
+            return "You won the game!"
+        } else if (playerScore < computerScore) {
+            playerScore = 0
+            computerScore = 0
+            counter = 0
+            return "Sorry, you lost the game."
+        }
     }
-    if (playerScore == computerScore) {
-        return "The game ended in a tie."
-    } else if (playerScore > computerScore) {
-        return "You won the game!"
-    } else if (playerScore < computerScore) {
-        return "Sorry, you lost the game."
-    }
+    return "Player Score: " + playerScore + "  Computer Score: " + computerScore
 }
 
+let playerScore = 0
+let computerScore = 0
+let counter = 0
+
 const buttons = document.querySelectorAll('button')
-const content = document.querySelector(".results")
+const resultsBox = document.querySelector(".results")
+const gameScoreBox = document.querySelector(".gameScore")
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let results = round(button.id);
-        content.textContent = results
+        resultsBox.textContent = results
+        let gameScore = game(results)
+        gameScoreBox.textContent = gameScore
     })
 })
